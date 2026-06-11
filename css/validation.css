@@ -1,0 +1,5 @@
+#validation-app { max-width: 640px; }
+#validation-app .field { margin: 16px 0; }
+#validation-app input[type="email"] { width: 320px; max-width: 100%; margin-top: 4px; }
+#validation-app input[type="file"] { margin-top: 4px; }
+#validation-app #result { font-weight: bold; margin-top: 16px; }
