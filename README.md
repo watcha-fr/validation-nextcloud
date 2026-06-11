@@ -28,8 +28,8 @@ docker exec nextcloud chown -R www-data:www-data /var/www/html/custom_apps/valid
 docker exec -u www-data nextcloud php occ app:enable validation
 
 # configurer le compte de service (où sont stockés les fichiers) et le webhook
-docker exec -u www-data nextcloud php occ config:app:set validation service_user --value="watcha"
-docker exec -u www-data nextcloud php occ config:app:set validation webhook_url --value="https://teamnet.app.n8n.cloud/webhook/validation"
+docker exec -u www-data nextcloud php occ config:app:set validation service_user --value="<compte_de_service>"
+docker exec -u www-data nextcloud php occ config:app:set validation webhook_url --value="https://VOTRE-N8N/webhook/validation"
 ```
 La page est ensuite accessible via l'entrée **« Validation »** du menu Nextcloud
 (`/apps/validation/`), pour tout utilisateur connecté.

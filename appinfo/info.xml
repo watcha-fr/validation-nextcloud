@@ -10,7 +10,7 @@
 	<author>WATCHA</author>
 	<namespace>Validation</namespace>
 	<category>workflow</category>
-	<bugs>https://teamnet.app.n8n.cloud</bugs>
+	<bugs>https://github.com/watcha-fr/validation/issues</bugs>
 	<dependencies>
 		<nextcloud min-version="28" max-version="33"/>
 	</dependencies>

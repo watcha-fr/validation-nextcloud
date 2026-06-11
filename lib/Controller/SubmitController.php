@@ -115,16 +115,18 @@ class SubmitController extends Controller {
 			'fileNames'        => $fileNames,
 			'validators'       => $validators,
 		];
-		$webhook = $this->config->getAppValue(
-			Application::APP_ID,
-			'webhook_url',
-			'https://teamnet.app.n8n.cloud/webhook/validation'
-		);
-		try {
-			$this->clientService->newClient()->post($webhook, ['json' => $payload]);
-		} catch (\Throwable $e) {
-			// n8n indisponible : on ne casse pas la soumission.
-			$this->logger->warning('Validation: webhook n8n injoignable: ' . $e->getMessage());
+		// URL du webhook n8n : à configurer via
+		//   occ config:app:set validation webhook_url --value="https://VOTRE-N8N/webhook/validation"
+		$webhook = $this->config->getAppValue(Application::APP_ID, 'webhook_url', '');
+		if ($webhook !== '') {
+			try {
+				$this->clientService->newClient()->post($webhook, ['json' => $payload]);
+			} catch (\Throwable $e) {
+				// n8n indisponible : on ne casse pas la soumission.
+				$this->logger->warning('Validation: webhook n8n injoignable: ' . $e->getMessage());
+			}
+		} else {
+			$this->logger->warning('Validation: webhook_url non configuré, aucun appel n8n effectué.');
 		}
 
 		return new JSONResponse([
