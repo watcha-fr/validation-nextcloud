@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-	<g fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
-		<!-- corps du presse-papier -->
-		<rect x="104" y="120" width="304" height="360" rx="40"/>
-		<!-- clip en haut -->
-		<rect x="196" y="72" width="120" height="84" rx="34"/>
-		<!-- lignes de la liste -->
-		<line x1="208" y1="214" x2="350" y2="214"/>
-		<line x1="208" y1="286" x2="350" y2="286"/>
-		<line x1="208" y1="358" x2="300" y2="358"/>
-		<!-- coche -->
-		<path d="M196 416 L236 456 L320 360"/>
-	</g>
-	<!-- puces de la liste -->
-	<g fill="#ffffff">
-		<circle cx="156" cy="214" r="12"/>
-		<circle cx="156" cy="286" r="12"/>
-		<circle cx="156" cy="358" r="12"/>
-	</g>
+	<defs>
+		<mask id="vmask">
+			<rect width="512" height="512" fill="black"/>
+			<!-- fichier du fond (plein) -->
+			<rect x="156" y="92" width="236" height="300" rx="26" fill="white"/>
+			<!-- séparation : creux autour du fichier de devant -->
+			<rect x="84" y="140" width="260" height="320" rx="34" fill="black"/>
+			<!-- fichier de devant (plein) -->
+			<rect x="96" y="152" width="236" height="300" rx="26" fill="white"/>
+			<!-- lignes évidées -->
+			<rect x="128" y="212" width="150" height="18" rx="9" fill="black"/>
+			<rect x="128" y="256" width="150" height="18" rx="9" fill="black"/>
+			<rect x="128" y="300" width="104" height="18" rx="9" fill="black"/>
+			<!-- pastille : anneau de séparation évidé -->
+			<circle cx="350" cy="404" r="88" fill="black"/>
+			<!-- pastille pleine -->
+			<circle cx="350" cy="404" r="74" fill="white"/>
+			<!-- coche évidée -->
+			<path d="M314 406 L340 432 L390 374" fill="none" stroke="black" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+		</mask>
+	</defs>
+	<rect width="512" height="512" fill="#ffffff" mask="url(#vmask)"/>
 </svg>
