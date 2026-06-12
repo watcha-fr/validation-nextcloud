@@ -1,30 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-	<defs>
-		<mask id="vmask">
-			<rect width="512" height="512" fill="black"/>
-			<!-- corps du presse-papier + clip (zones pleines) -->
-			<rect x="104" y="120" width="304" height="360" rx="40" fill="white"/>
-			<rect x="196" y="72" width="120" height="84" rx="34" fill="white"/>
-			<!-- trou du clip -->
-			<circle cx="256" cy="104" r="15" fill="black"/>
-			<!-- anneau de séparation autour du badge -->
-			<circle cx="404" cy="404" r="102" fill="black"/>
-			<!-- badge (zone pleine) -->
-			<circle cx="404" cy="404" r="88" fill="white"/>
-			<!-- puces de la liste (trous) -->
-			<circle cx="176" cy="214" r="15" fill="black"/>
-			<circle cx="176" cy="282" r="15" fill="black"/>
-			<circle cx="176" cy="350" r="15" fill="black"/>
-			<circle cx="176" cy="418" r="15" fill="black"/>
-			<!-- lignes de la liste (trous) -->
-			<rect x="212" y="201" width="150" height="26" rx="13" fill="black"/>
-			<rect x="212" y="269" width="150" height="26" rx="13" fill="black"/>
-			<rect x="212" y="337" width="96"  height="26" rx="13" fill="black"/>
-			<rect x="212" y="405" width="86"  height="26" rx="13" fill="black"/>
-			<!-- coche (trou) -->
-			<path d="M366 406 L392 434 L446 374" fill="none" stroke="black" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
-		</mask>
-	</defs>
-	<rect width="512" height="512" fill="#000000" mask="url(#vmask)"/>
+	<g fill="none" stroke="#000000" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+		<!-- corps du presse-papier -->
+		<rect x="104" y="120" width="304" height="360" rx="40"/>
+		<!-- clip en haut -->
+		<rect x="196" y="72" width="120" height="84" rx="34"/>
+		<!-- lignes de la liste -->
+		<line x1="208" y1="214" x2="350" y2="214"/>
+		<line x1="208" y1="286" x2="350" y2="286"/>
+		<line x1="208" y1="358" x2="300" y2="358"/>
+		<!-- coche -->
+		<path d="M196 416 L236 456 L320 360"/>
+	</g>
+	<!-- puces de la liste -->
+	<g fill="#000000">
+		<circle cx="156" cy="214" r="12"/>
+		<circle cx="156" cy="286" r="12"/>
+		<circle cx="156" cy="358" r="12"/>
+	</g>
 </svg>
