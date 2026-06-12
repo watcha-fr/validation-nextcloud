@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-	<g fill="none" stroke="#000000" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+	<g fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
 		<!-- corps du presse-papier -->
 		<rect x="104" y="120" width="304" height="360" rx="40"/>
 		<!-- clip en haut -->
@@ -13,7 +13,7 @@
 		<path d="M196 416 L236 456 L320 360"/>
 	</g>
 	<!-- puces de la liste -->
-	<g fill="#000000">
+	<g fill="#ffffff">
 		<circle cx="156" cy="214" r="12"/>
 		<circle cx="156" cy="286" r="12"/>
 		<circle cx="156" cy="358" r="12"/>
