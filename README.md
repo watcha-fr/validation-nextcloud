@@ -34,6 +34,16 @@ docker exec -u www-data nextcloud php occ config:app:set validation webhook_url 
 La page est ensuite accessible via l'entrée **« Validation »** du menu Nextcloud
 (`/apps/validation/`), pour tout utilisateur connecté.
 
+## Configuration (Administration → Paramètres additionnels)
+Un onglet **« Validation de documents »** permet, sans ligne de commande :
+- de saisir l'**URL du webhook n8n** et le **compte de service** (UID) ;
+- de **générer / régénérer** un mot de passe d'application pour le compte de service
+  (à reporter dans le credential NextCloud de n8n). L'ancien token du même nom est révoqué.
+
+> Le bouton crée un token d'app nommé « n8n - Validation » pour le compte de service
+> (via le token provider Nextcloud) — visible/révocable aussi dans Sécurité du compte.
+> Les valeurs restent stockables par `occ config:app:set` (équivalent).
+
 ## Données envoyées au webhook n8n
 ```json
 {
