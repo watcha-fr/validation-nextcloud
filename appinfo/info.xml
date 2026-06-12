@@ -5,7 +5,7 @@
 	<name>Validation de documents</name>
 	<summary>Dépôt de documents et déclenchement du circuit de validation n8n</summary>
 	<description><![CDATA[App minimale et indépendante de Forms : un utilisateur dépose un ou plusieurs documents et saisit les emails des validateurs ; l'app stocke les fichiers et déclenche le circuit de validation n8n.]]></description>
-	<version>0.2.4</version>
+	<version>0.3.0</version>
 	<licence>agpl</licence>
 	<author>WATCHA</author>
 	<namespace>Validation</namespace>
