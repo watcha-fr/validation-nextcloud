@@ -21,8 +21,8 @@ class AdminSettings implements ISettings {
 	}
 
 	public function getSection(): string {
-		// Apparaît dans Administration → Paramètres additionnels.
-		return 'additional';
+		// Section dédiée « Validation » (voir AdminSection).
+		return 'validation';
 	}
 
 	public function getPriority(): int {
