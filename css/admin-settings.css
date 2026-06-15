@@ -1,6 +1,0 @@
-#validation-admin .field { margin: 16px 0; }
-#validation-admin input[type="url"] { width: 480px; max-width: 100%; margin-top: 4px; }
-#validation-admin input[type="text"] { width: 280px; max-width: 100%; margin-top: 4px; }
-#validation-admin #val-save-result { margin-left: 8px; }
-#validation-admin #val-pw-result { margin-top: 12px; }
-#validation-admin hr { margin: 24px 0; }

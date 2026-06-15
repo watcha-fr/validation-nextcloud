@@ -2,3 +2,9 @@
 Thumbs.db
 *.log
 node_modules/
+
+# Outils de build (le build se fait sur la VM dédiée, cf. Suivi-app-validation.md)
+package-lock.json
+
+# Source maps des bundles : inutiles au runtime, trop volumineuses pour le repo.
+js/*.map
