@@ -5,19 +5,17 @@
 
 		<div class="v-field">
 			<NcTextField
+				v-model="webhookUrl"
 				:label="t('validation', 'URL du webhook n8n')"
-				:value="webhookUrl"
 				type="url"
-				placeholder="https://VOTRE-N8N/webhook/validation"
-				@update:value="val => webhookUrl = val" />
+				placeholder="https://VOTRE-N8N/webhook/validation" />
 		</div>
 
 		<div class="v-field">
 			<NcTextField
+				v-model="serviceUser"
 				:label="t('validation', 'Compte de service (UID)')"
-				:value="serviceUser"
-				placeholder="ex. watcha"
-				@update:value="val => serviceUser = val" />
+				placeholder="ex. watcha" />
 		</div>
 
 		<NcButton type="primary" :disabled="saving" @click="save">
@@ -44,7 +42,7 @@
 			<NcTextField
 				class="v-pwfield"
 				:label="t('validation', 'Mot de passe')"
-				:value="generated.password"
+				:model-value="generated.password"
 				:readonly="true"
 				@focus="selectAll" />
 		</NcNoteCard>

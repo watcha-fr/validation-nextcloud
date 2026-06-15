@@ -70,12 +70,11 @@
 					<div v-for="(v, i) in validators" :key="v.id" class="v-validator-row">
 						<span class="v-order">{{ i + 1 }}</span>
 						<NcTextField
+							v-model="v.email"
 							class="v-validator-field"
 							:label="t('validation', 'Email du validateur')"
-							:value="v.email"
 							type="email"
-							placeholder="email@exemple.fr"
-							@update:value="val => v.email = val" />
+							placeholder="email@exemple.fr" />
 						<NcButton
 							type="tertiary"
 							:aria-label="t('validation', 'Retirer ce validateur')"
