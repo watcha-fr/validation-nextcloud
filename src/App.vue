@@ -255,14 +255,27 @@ export default {
 }
 </script>
 
+<style>
+/* Le conteneur de montage est un item flex de la zone de contenu Nextcloud :
+   sans cela il se réduit à son contenu et reste collé en haut à gauche. */
+#validation-app {
+	width: 100%;
+}
+</style>
+
 <style scoped lang="scss">
 .v-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
 	padding: 24px;
+	box-sizing: border-box;
 }
 
 .v-card {
+	width: 100%;
 	max-width: 560px;
-	margin: 0 auto;
 	background: var(--color-main-background);
 	border: 1px solid var(--color-border);
 	border-radius: var(--border-radius-large, 12px);
