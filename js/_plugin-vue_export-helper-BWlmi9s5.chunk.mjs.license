@@ -4,8 +4,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
 SPDX-License-Identifier: ISC
 SPDX-License-Identifier: MIT
 SPDX-FileCopyrightText: @nextcloud/dialogs developers
-SPDX-FileCopyrightText: Anthony Fu <https://github.com/antfu>
-SPDX-FileCopyrightText: David Clark
 SPDX-FileCopyrightText: David Myers <hello@davidmyers.dev>
 SPDX-FileCopyrightText: Dr.-Ing. Mario Heiderich, Cure53 <mario@cure53.de> (https://cure53.de/)
 SPDX-FileCopyrightText: Eduardo San Martin Morote
@@ -70,12 +68,6 @@ This file is generated from multiple sources. Included packages:
 - @vue/shared
 	- version: 3.5.38
 	- license: MIT
-- @vueuse/core
-	- version: 14.3.0
-	- license: MIT
-- @vueuse/shared
-	- version: 14.3.0
-	- license: MIT
 - axios
 	- version: 1.18.0
 	- license: MIT
@@ -88,15 +80,9 @@ This file is generated from multiple sources. Included packages:
 - floating-vue
 	- version: 5.2.2
 	- license: MIT
-- focus-trap
-	- version: 8.2.1
-	- license: MIT
 - semver
 	- version: 7.8.4
 	- license: ISC
-- tabbable
-	- version: 6.4.0
-	- license: MIT
 - toastify-js
 	- version: 1.12.0
 	- license: MIT

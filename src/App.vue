@@ -113,7 +113,7 @@
 <script>
 import axios from '@nextcloud/axios'
 import { getCurrentUser } from '@nextcloud/auth'
-import { showError, showSuccess, getFilePickerBuilder, FilePickerType } from '@nextcloud/dialogs'
+import { showError, showSuccess } from '@nextcloud/dialogs'
 import { translate as t } from '@nextcloud/l10n'
 import { generateUrl, generateRemoteUrl } from '@nextcloud/router'
 
@@ -183,21 +183,23 @@ export default {
 				this.addFiles(Array.from(e.dataTransfer.files), 'local')
 			}
 		},
-		async pickFromNextcloud() {
-			const picker = getFilePickerBuilder(t('validation', 'Sélectionner des documents dans Nextcloud'))
-				.setMultiSelect(true)
-				.allowDirectories(false)
-				.setType(FilePickerType.Choose)
-				.build()
-			let res
-			try {
-				res = await picker.pick()
-			} catch (e) {
-				return // annulé
-			}
-			const paths = Array.isArray(res) ? res : [res]
+		pickFromNextcloud() {
+			// Sélecteur natif vanilla de Nextcloud (OC.dialogs) : pas de conflit Vue 2/3
+			// contrairement au FilePicker de @nextcloud/dialogs (composant Vue 2).
+			const OC = window.OC
+			OC.dialogs.filepicker(
+				t('validation', 'Sélectionner des documents dans Nextcloud'),
+				paths => this.attachFromNextcloud(paths),
+				true, // multi-sélection
+				[], // aucun filtre de type
+				true, // modal
+				OC.dialogs.FILEPICKER_TYPE_CHOOSE,
+			)
+		},
+		async attachFromNextcloud(paths) {
+			const list = Array.isArray(paths) ? paths : [paths]
 			const dav = generateRemoteUrl('dav/files/' + getCurrentUser().uid)
-			for (const p of paths) {
+			for (const p of list) {
 				if (!p) { continue }
 				try {
 					const r = await axios.get(dav + p.split('/').map(encodeURIComponent).join('/'), { responseType: 'blob' })
